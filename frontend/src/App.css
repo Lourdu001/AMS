@@ -120,4 +120,8 @@ body {
   .login-btn {
     width: 95%;
   }
+  .icon{
+  padding-left: 20px;
 }
+}
+
