@@ -1,0 +1,33 @@
+.attendencepagecontainer{
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    margin: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.insidecontainer{
+    height: 95vh;
+    width: 95%;
+    background-color: rgb(255, 248, 238);
+    
+}
+.tdstyle{
+
+width: 200px;
+}
+.tabletopcontainer{
+    width: 100%;
+    background-color: bisque;
+}
+.test{
+    float:right
+}
+.fleft{
+    float: right;
+    margin-right: 10px;
+}
+.fright{
+    float: left;
+    margin-left: 10px;
+}

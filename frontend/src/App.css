@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(to top right, #3b4eda, #c64bb3);
-  padding: 20px;
+  padding: 20px;  
 }
 
 .login-box {
