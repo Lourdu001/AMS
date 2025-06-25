@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
@@ -92,4 +92,127 @@ body {
   font-size: 14px;
   text-align: center;
   color: #666;
+} */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top right, #3b4eda, #c64bb3);
+  padding: 20px;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  width: 100%;
+}
+
+.avatar-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border-radius: 25px;
+  border: none;
+  background-color: #f0f0f0;
+  outline: none;
+}
+
+.login-btn {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #45a049;
+}
+
+.forgot-text {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+}
+
+/* 🔁 Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .login-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .avatar-section {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .form-section {
+    padding: 0;
+    width: 100%;
+  }
+
+  .input-container input {
+    font-size: 16px;
+  }
+
+  .login-btn {
+    width: 100%;
+  }
 }
