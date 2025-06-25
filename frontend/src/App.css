@@ -27,7 +27,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 20px;
+  padding-right: 40px;
+  padding-left: 30px;
 }
 
 .avatar {
@@ -56,7 +57,7 @@ body {
 
 .icon {
   position: absolute;
-  left: 10px;
+  left: 2%;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
@@ -72,6 +73,7 @@ body {
 }
 
 .login-btn {
+  width: 88%;
   padding: 10px;
   background-color: #4caf50;
   color: white;
@@ -118,10 +120,12 @@ body {
   }
 
   .login-btn {
-    width: 95%;
+    width: 90%;
+      margin-left: 5%;
+
   }
   .icon{
-  padding-left: 20px;
+  padding-left: 5%;
 }
 }
 
