@@ -16,6 +16,7 @@ const timeout = "23.00.00";
 <div className='attendencepagecontainer'>
     <div className='insidecontainer'>
     <div className='pagetopcontaioner'>
+      <div className='testingwidth'>
 <div className='excelandpdfcontainer'>
     <h5 className='exandpditem'>Excel</h5>
     <h5 className='exandpditem'>PDF</h5>
@@ -23,6 +24,7 @@ const timeout = "23.00.00";
 <div >
     <label className='searchlabel' htmlFor="">Search:</label>
     <input className='inputboxforsearch' type="text" name="" id="" />
+</div>
 </div>
     </div>
     <div className='tabletopcontainer'>
