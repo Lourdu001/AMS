@@ -57,6 +57,15 @@ align-items: center;
 padding-left: 10px;
 padding-right: 10px;
 }
+.timeoutstyle{
+      display: flex;
+    justify-content: space-between;
+    width: 150px;
+align-items: center;
+
+padding-left: 10px;
+padding-right: 10px;
+}
 .empstyle{
      display: flex;
     justify-content: space-between;
@@ -113,6 +122,10 @@ td{
     font-size:small;
 
 }
+.timeoutstyle{
+       width: 90px;
+    font-size: small;
+}
 .img{
     width: 20px;
 }
@@ -123,10 +136,9 @@ td{
 }
 @media (max-width: 650px) {
  .singlestyle{
-    width: 60px;
+    width: 55px;
     padding-left: 1%;
     padding-right: 0%;
-
     font-size:xx-small;
  }
 .empstyle{
@@ -140,6 +152,12 @@ font-size: xx-small;
 .attendancestyletemp{
      width: 80px;
     font-size:xx-small ;
+}
+.timeoutstyle{
+       width: 60px;
+    padding-left: 1%;
+    padding-right: 0%;
+    font-size:xx-small;
 }
  }
 

@@ -35,7 +35,7 @@ const timeout = "23.00.00";
                 <th className='singlestyle'><h4 >Name</h4> <img className='img'  src={mail} alt="mail" /></th>
                 <th className='attendancestyletemp'><h4 >Attendance</h4> <img  className='img' src={mail} alt="mail"  /></th>
                 <th className='singlestyle'><h4 >Time In</h4> <img className='img' src={mail} alt="mail" /></th>
-                <th className='singlestyle'><h4 >Time Out</h4> <img className='img' src={mail} alt="mail"  /></th>
+                <th className='timeoutstyle'><h4 >Time Out</h4> <img className='img' src={mail} alt="mail"  /></th>
 
               </tr>
             </thead>
@@ -46,7 +46,7 @@ const timeout = "23.00.00";
                 <td className='singlestyle'>{empname}</td>
                 <td className='attendancestyletemp'><h4 >{attendance}</h4><h4 >{ontime}</h4></td>
                 <td className='singlestyle'>{timein}</td>
-                <td className='singlestyle'>{timeout}</td>
+                <td className='timeoutstyle'>{timeout}</td>
 
                
               </tr>
