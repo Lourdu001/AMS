@@ -222,4 +222,45 @@ font-size:7px;
 
 }
 }
+@media(max-width:812px){
+   
+    .singlestyle{
+    width: 55px;
+    padding-left: 1%;
+    padding-right: 0%;
+    font-size:7px;
+ }
+.empstyle{
+width: 40px;
+font-size:7px;
+}
+.img{
+    width: 15px;
+}
+.testingwidth{
+    width: 50%;
+    margin-left: 0%;
+
+}
+.attendancestyletemp{
+     width: 70px;
+    font-size:7px ;
+}
+.timeoutstyle{
+       width: 50px;
+    padding-left: 1%;
+    padding-right: 0%;
+    font-size:7px;
+}
+.excelandpdfcontainer{
+    font-size: 7px;
+}
+
+.searchlabel{
+    font-size: 7px;
+}
+.inputboxforsearch{
+    width: 100px;
+}
+}
 
