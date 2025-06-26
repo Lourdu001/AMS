@@ -14,7 +14,7 @@
 }
 
 .tabletopcontainer{
-    width: 95%;
+    width: 100%;
     padding: 0%;
   justify-content: center;
   display: flex;
@@ -41,7 +41,7 @@ td{
     display: flex;
    background-color: aqua;
    
-   width: 95%;
+   width: 90%;
    justify-content: space-between;
    gap: 25%;
    padding-left: 1%;
@@ -139,25 +139,25 @@ td{
     width: 55px;
     padding-left: 1%;
     padding-right: 0%;
-    font-size:xx-small;
+    font-size:7px;
  }
 .empstyle{
-width: 50px;
-font-size: xx-small;
+width: 40px;
+font-size:7px;
 }
 .img{
     width: 15px;
 }
 
 .attendancestyletemp{
-     width: 80px;
-    font-size:xx-small ;
+     width: 70px;
+    font-size:7px ;
 }
 .timeoutstyle{
-       width: 60px;
+       width: 50px;
     padding-left: 1%;
     padding-right: 0%;
-    font-size:xx-small;
+    font-size:7px;
 }
  }
 
