@@ -14,7 +14,7 @@
 }
 
 .tabletopcontainer{
-    width: 100%;
+    width: 95%;
     padding: 0%;
   justify-content: center;
   display: flex;
@@ -41,7 +41,7 @@ td{
     display: flex;
    background-color: aqua;
    
-   width: 100%;
+   width: 95%;
    justify-content: space-between;
    gap: 25%;
    padding-left: 1%;
@@ -116,7 +116,7 @@ td{
     font-size: small;
  }
  .empstyle{
-    width: 70px;
+    width: 80px;
     padding-left: 1%;
             padding-right: 0%;
     font-size:small;
@@ -130,7 +130,7 @@ td{
     width: 20px;
 }
 .attendancestyletemp{
-    width: 130px;
+    width: 110px;
     font-size: small;
 }
 }
