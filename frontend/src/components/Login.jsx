@@ -4,7 +4,7 @@ import mail from '../assets/mail.svg'
 import lock from '../assets/Lock.svg'
 
 
-const Login = () => {
+const Login = ({move}) => {
 
 
 
@@ -28,8 +28,11 @@ const Login = () => {
           </div>
           <button className="login-btn">Login</button>
           <p className="forgot-text">Forgot Username / Password?</p>
+                        <button onClick={move}>Table</button>
+
         </div>
       </div>
+
     </div>
       )
 }

@@ -3,7 +3,7 @@
 
   import { LuArrowDownUp } from "react-icons/lu";
 
-  const Attendance = () => {
+  const Attendance = ({ move}) => {
   const date = "11.11.2025";
   const empid = 111;
   const empname = "Lord";
@@ -51,10 +51,36 @@
                   <td className='singlestyle'>{timein}</td>
                   <td className='timeoutstyle'>{timeout}</td>
                 </tr>
+                <tr className='trstyle bgstyle'>
+                  <td className='singlestyle bgstyle'>{date}</td>
+                  <td className='empstyle bgstyle'>{empid}</td>
+                  <td className='singlestyle bgstyle'>{empname}</td>
+                  <td className='attendancestyletemp bgstyle'><p >{attendance}</p><p className='ontimestyle'>{ontime}</p></td>
+                  <td className='singlestyle bgstyle'>{timein}</td>
+                  <td className='timeoutstyle bgstyle'>{timeout}</td>
+                </tr>
+                 <tr className='trstyle'>
+                  <td className='singlestyle'>{date}</td>
+                  <td className='empstyle'>{empid}</td>
+                  <td className='singlestyle'>{empname}</td>
+                  <td className='attendancestyletemp'><p >{attendance}</p><p className='ontimestyle'>{ontime}</p></td>
+                  <td className='singlestyle'>{timein}</td>
+                  <td className='timeoutstyle'>{timeout}</td>
+                </tr>
+                 <tr className='trstyle bgstyle'>
+                  <td className='singlestyle bgstyle'>{date}</td>
+                  <td className='empstyle bgstyle'>{empid}</td>
+                  <td className='singlestyle bgstyle'>{empname}</td>
+                  <td className='attendancestyletemp bgstyle'><p >{attendance}</p><p className='ontimestyle'>{ontime}</p></td>
+                  <td className='singlestyle bgstyle'>{timein}</td>
+                  <td className='timeoutstyle bgstyle'>{timeout}</td>
+                </tr> 
               </tbody>
             </table>
           
+          
       </div>
+        <button onClick={move}>Log In</button>
       </div>
   </div>
   )
