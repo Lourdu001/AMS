@@ -31,9 +31,9 @@ const timeout = "23.00.00";
               <tr className='trstyle bgstyle' >
              
                 <th className='singlestyle'><p >Date</p> <img className='img' src={mail} alt="mail"  /></th>
-                <th className='singlestyle'><h4 >EmpID</h4> <img className='img' src={mail} alt="mail"  /></th>
+                <th className='empstyle'><h4 >EmpID</h4> <img className='img' src={mail} alt="mail"  /></th>
                 <th className='singlestyle'><h4 >Name</h4> <img className='img'  src={mail} alt="mail" /></th>
-                <th className='singlestyle'><h4 >Attendance</h4> <img  className='img' src={mail} alt="mail"  /></th>
+                <th className='attendancestyletemp'><h4 >Attendance</h4> <img  className='img' src={mail} alt="mail"  /></th>
                 <th className='singlestyle'><h4 >Time In</h4> <img className='img' src={mail} alt="mail" /></th>
                 <th className='singlestyle'><h4 >Time Out</h4> <img className='img' src={mail} alt="mail"  /></th>
 
@@ -42,9 +42,9 @@ const timeout = "23.00.00";
             <tbody>
               <tr className='trstyle'>
                 <td className='singlestyle'>{date}</td>
-                <td className='singlestyle'>{empid}</td>
+                <td className='empstyle'>{empid}</td>
                 <td className='singlestyle'>{empname}</td>
-                <td className='singlestyle'><h4 >{attendance}</h4><h4 >{ontime}</h4></td>
+                <td className='attendancestyletemp'><h4 >{attendance}</h4><h4 >{ontime}</h4></td>
                 <td className='singlestyle'>{timein}</td>
                 <td className='singlestyle'>{timeout}</td>
 

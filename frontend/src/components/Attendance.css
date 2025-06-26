@@ -12,10 +12,7 @@
     background-color: rgb(255, 248, 238);
     
 }
-.tdstyle{
 
-width: 200px;
-}
 .tabletopcontainer{
     width: 100%;
     padding: 0%;
@@ -60,6 +57,24 @@ align-items: center;
 padding-left: 10px;
 padding-right: 10px;
 }
+.empstyle{
+     display: flex;
+    justify-content: space-between;
+    width: 150px;
+align-items: center;
+
+padding-left: 10px;
+padding-right: 10px;
+}
+.attendancestyletemp{
+     display: flex;
+    justify-content: space-between;
+    width: 150px;
+align-items: center;
+
+padding-left: 10px;
+padding-right: 10px;
+}
 .tabletag{
     border: 2px;
     border-color: rgb(175, 175, 175);
@@ -91,8 +106,22 @@ td{
     width: 90px;
     font-size: small;
  }
+ .empstyle{
+    width: 70px;
+    padding-left: 1%;
+            padding-right: 0%;
+    font-size:small;
+
 }
-@media (max-width: 600px) {
+.img{
+    width: 20px;
+}
+.attendancestyletemp{
+    width: 130px;
+    font-size: small;
+}
+}
+@media (max-width: 650px) {
  .singlestyle{
     width: 60px;
     padding-left: 1%;
@@ -101,6 +130,18 @@ td{
     font-size:xx-small;
 .img{
     width: 15px;
+}
+
+  .empstyle{
+    width: 70px;
+    padding-left: 1%;
+            padding-right: 0%;
+    font-size:xx-small;
+
+}
+.attendancestyletemp{
+     width: 100px;
+    font-size:xx-small ;
 }
  }
 }
