@@ -12,7 +12,13 @@
     background-color: rgb(255, 248, 238);
     
 }
-
+.ontimestyle{
+    border-radius: 5px;
+    border-color: rgb(70, 70, 70);
+    padding: 3%;
+    background-color: rgb(0, 135, 72);
+    color: white;
+}
 .tabletopcontainer{
     width: 100%;
     padding: 0%;
@@ -39,7 +45,6 @@ td{
 }
 .centerset{
     display: flex;
-   background-color: rgb(0, 119, 255);
    
    width: 90%;
    justify-content: space-between;
@@ -62,7 +67,6 @@ padding-right: 10px;
     justify-content: space-between;
     width: 150px;
 align-items: center;
-
 padding-left: 10px;
 padding-right: 10px;
 }
@@ -92,16 +96,14 @@ padding-right: 10px;
 
 }
 .tabletag{
-    border: 2px;
-    border-color: rgb(175, 175, 175);
-    border-style: solid;
+    border: none;
 
 }
 th{
     background-color: black;
     color: white;
     border-color: aliceblue;
-    border: 1px;
+    border: .10px;
     border-style: solid;
 }
 .bgstyle{
@@ -111,7 +113,7 @@ th{
 td{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    border-color: rgb(0, 0, 0);
+    border-color: rgb(250, 0, 0);
     border: 1px;
     border-style: solid; 
     padding-top: 10px;
@@ -131,16 +133,13 @@ padding-left: 20px;
 padding-right: 20px;
 }
 .pagetopcontaioner{
-    
      width: 100%;
      align-items: center;
-     
     padding: 0%;
     margin-left: 0%;
   justify-content: center;
   display: flex;
   padding-top: 2%;
-
 }
 
 
@@ -205,12 +204,14 @@ padding-right: 20px;
  .singlestyle{
     width: 55px;
     padding-left: 1%;
-    padding-right: 0%;
+    padding-right: 1%;
     font-size:7px;
  }
 .empstyle{
 width: 40px;
 font-size:7px;
+    padding-right: 1%;
+
 }
 .img{
     width: 15px;
@@ -218,7 +219,6 @@ font-size:7px;
 .testingwidth{
     width: 360px;
     margin-left: 0%;
-    background-color: aquamarine;
 
 }
 .attendancestyletemp{
@@ -228,8 +228,9 @@ font-size:7px;
 .timeoutstyle{
        width: 50px;
     padding-left: 1%;
-    padding-right: 0%;
     font-size:7px;
+        padding-right: 1%;
+
 }
 .excelandpdfcontainer{
     font-size: 7px;
@@ -242,3 +243,12 @@ font-size:7px;
     width: 100px;
 }
  }
+ td{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px;
+    border-style: solid; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-color: rgb(136, 136, 136);
+}
