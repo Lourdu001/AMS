@@ -128,21 +128,19 @@ td{
     padding-right: 0%;
 
     font-size:xx-small;
+ }
+.empstyle{
+width: 50px;
+font-size: xx-small;
+}
 .img{
     width: 15px;
 }
 
-  .empstyle{
-    width: 70px;
-    padding-left: 1%;
-            padding-right: 0%;
-    font-size:xx-small;
-
-}
 .attendancestyletemp{
-     width: 100px;
+     width: 80px;
     font-size:xx-small ;
 }
  }
-}
+
 
