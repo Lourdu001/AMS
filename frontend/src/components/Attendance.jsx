@@ -26,25 +26,29 @@ const timeout = "23.00.00";
 </div>
     </div>
     <div className='tabletopcontainer'>
- <table>
+ <table className='tabletag'>
             <thead>
-              <tr>
-                <th className='tdstyle'><p className='fright'>Date</p> <img className='fleft' src={mail} alt="mail" color='black' /></th>
-                <th className='tdstyle'>Date <img src={mail} alt="mail" color='black' /></th>
-                <th className='tdstyle'><p>Name</p><p>⬆️⬇️</p></th>
-                <th className='tdstyle'><div>Attendance</div><div>⬆️⬇️</div></th>
-                <th className='tdstyle'><div>Time In</div><div>⬆️⬇️</div></th>
-                <th className='tdstyle'><div>Time Out</div><div>⬆️⬇️</div></th>
+              <tr className='trstyle bgstyle' >
+             
+                <th className='singlestyle'><p >Date</p> <img className='img' src={mail} alt="mail"  /></th>
+                <th className='singlestyle'><h4 >EmpID</h4> <img className='img' src={mail} alt="mail"  /></th>
+                <th className='singlestyle'><h4 >Name</h4> <img className='img'  src={mail} alt="mail" /></th>
+                <th className='singlestyle'><h4 >Attendance</h4> <img  className='img' src={mail} alt="mail"  /></th>
+                <th className='singlestyle'><h4 >Time In</h4> <img className='img' src={mail} alt="mail" /></th>
+                <th className='singlestyle'><h4 >Time Out</h4> <img className='img' src={mail} alt="mail"  /></th>
+
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{date}</td>
-                <td>{empid}</td>
-                <td>{empname}</td>
-                <td><div>{attendance}</div><div>{ontime}</div></td>
-                <td>{timein}</td>
-                <td>{timeout}</td>
+              <tr className='trstyle'>
+                <td className='singlestyle'>{date}</td>
+                <td className='singlestyle'>{empid}</td>
+                <td className='singlestyle'>{empname}</td>
+                <td className='singlestyle'><h4 >{attendance}</h4><h4 >{ontime}</h4></td>
+                <td className='singlestyle'>{timein}</td>
+                <td className='singlestyle'>{timeout}</td>
+
+               
               </tr>
             </tbody>
           </table>
