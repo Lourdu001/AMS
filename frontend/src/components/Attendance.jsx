@@ -15,14 +15,14 @@ const timeout = "23.00.00";
   return (
 <div className='attendencepagecontainer'>
     <div className='insidecontainer'>
-    <div>
-<div>
-    <h5>Excel</h5>
-    <h5>PDF</h5>
+    <div className='pagetopcontaioner'>
+<div className='excelandpdfcontainer'>
+    <h5 className='exandpditem'>Excel</h5>
+    <h5 className='exandpditem'>PDF</h5>
 </div>
-<div>
-    <label htmlFor="">Search:</label>
-    <input type="text" name="" id="" />
+<div >
+    <label className='searchlabel' htmlFor="">Search:</label>
+    <input className='inputboxforsearch' type="text" name="" id="" />
 </div>
     </div>
     <div className='tabletopcontainer'>
@@ -44,11 +44,9 @@ const timeout = "23.00.00";
                 <td className='singlestyle'>{date}</td>
                 <td className='empstyle'>{empid}</td>
                 <td className='singlestyle'>{empname}</td>
-                <td className='attendancestyletemp'><h4 >{attendance}</h4><h4 >{ontime}</h4></td>
+                <td className='attendancestyletemp'><p >{attendance}</p><p >{ontime}</p></td>
                 <td className='singlestyle'>{timein}</td>
                 <td className='timeoutstyle'>{timeout}</td>
-
-               
               </tr>
             </tbody>
           </table>
