@@ -7,7 +7,27 @@ import lock from '../assets/Lock.svg'
 const Login = ({move}) => {
 
 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [response, setResponse] = useState(null);
+  const [error, setError] = useState('');
+    const BaseUrl = 'https://amsserver.onrender.com';
 
+
+  const handleLogin = async () => {
+    try {
+      const res = await axios.post(`${BaseUrl}/login`, {
+        email,
+        password,
+      });
+
+      setResponse(res.data);
+      setError('');
+    } catch (err) {
+      setError(err.response?.data?.message || 'Login failed');
+      setResponse(null);
+    }
+  };
 
     
   return (
@@ -20,14 +40,18 @@ const Login = ({move}) => {
           <h2>User Login</h2>
           <div className="input-container">
             <span className="icon"><img src={mail} alt="mail" width={18} height={18} /></span>
-            <input type="text" placeholder="Email Id" />
+            <input type="text" placeholder="Email Id"   onChange={(e) => setEmail(e.target.value)}
+        value={email} />
           </div>    
           <div className="input-container">
             <span className="icon"><img src={lock} alt="lock" width={15} /></span>
-            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)}
+        value={password} />
           </div>
-          <button className="login-btn">Login</button>
-          <p className="forgot-text">Forgot Username / Password?</p>
+          <button className="login-btn" onClick={handleLogin}>Login</button>
+{response && <pre>{JSON.stringify(response.user, null, 2)}</pre>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+                <p className="forgot-text">Forgot Username / Password?</p>
                         <button onClick={move}>Table</button>
 
         </div>
