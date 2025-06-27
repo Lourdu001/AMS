@@ -11,6 +11,19 @@ const Login = ({move}) => {
   const [error, setError] = useState('');
   const BaseUrl = 'https://amsserver.onrender.com';
 
+const loginfunction = () =>{
+  if(email&&password){
+    handleLogin();
+  }else if(!email&&password){
+setError('Enter gmail id');
+  }else if(email&&!password){
+    setError('Enter password');
+  }else{
+    setError('Enter gmail and password');
+  }
+}
+
+
   const handleLogin = async () => {
     try {
       const res = await axios.post(`${BaseUrl}/login`, {
@@ -53,7 +66,7 @@ const Login = ({move}) => {
               value={password}
             />
           </div>
-          <button className="login-btn" onClick={handleLogin}>Login</button>
+          <button className="login-btn" onClick={loginfunction}>Login</button>
           {response && <pre>{JSON.stringify(response.user, null, 2)}</pre>}
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <p className="forgot-text">Forgot Username / Password?</p>
