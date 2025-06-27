@@ -68,7 +68,7 @@ import mail from '../assets/mail.svg';
 import lock from '../assets/Lock.svg';
 import axios from 'axios';
 
-const Login = () => {
+const Login = ({move}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [response, setResponse] = useState(null);
