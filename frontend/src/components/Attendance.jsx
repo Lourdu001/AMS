@@ -83,16 +83,16 @@ const Attendance = ({ move }) => {
                 <tr><td colSpan="6">No data available</td></tr>
               ) : (
                 (filter.length > 0 ? filter : data).map((item, index) => (
-                  <tr className={`trstyle ${index % 2 === 0 ? '' : 'bgstyle'}`} key={index}>
-                    <td className='singlestyle'>{item.date}</td>
-                    <td className='empstyle'>{item.empid}</td>
-                    <td className='singlestyle'>{item.name}</td>
-                    <td className='attendancestyletemp'>
+                  <tr className='trstyle ' key={index}>
+                    <td className={`singlestyle ${index % 2 === 0 ? '' : 'bgstyle'}`}  >{item.date}</td>
+                    <td  className={`empstyle ${index % 2 === 0 ? '' : 'bgstyle'}`}>{item.empid}</td>
+                    <td className={`singlestyle ${index % 2 === 0 ? '' : 'bgstyle'}`}>{item.name}</td>
+                    <td  className={`attendancestyletemp ${index % 2 === 0 ? '' : 'bgstyle'}`}>
                       <p>{item.attendance}</p>
                       <p className='ontimestyle'>ontime</p>
                     </td>
-                    <td className='singlestyle'>{item.timein}</td>
-                    <td className='timeoutstyle'>{item.timeout}</td>
+                    <td className={`singlestyle ${index % 2 === 0 ? '' : 'bgstyle'}`}>{item.timein}</td>
+                    <td  className={`timeoutstyle ${index % 2 === 0 ? '' : 'bgstyle'}`}>{item.timeout}</td>
                   </tr>
                 ))
               ))}
