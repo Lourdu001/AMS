@@ -33,10 +33,18 @@ const Attendance = ({ move }) => {
     } else {
       setFilter(
         data.filter(item =>
+          // item.name?.toLowerCase().includes(lowerSearch) ||
+          // item.empid?.toString().includes(searchtext) ||
+          // item.id?.toString().includes(searchtext) ||
+          // item.attendance?.toString().toLowerCase().includes(lowerSearch)
           item.name?.toLowerCase().includes(lowerSearch) ||
-          item.empid?.toString().includes(searchtext) ||
-          item.id?.toString().includes(searchtext) ||
-          item.attendance?.toString().toLowerCase().includes(lowerSearch)
+        item.empid?.toString().includes(searchtext) ||
+        item.id?.toString().includes(searchtext) ||
+        item.attendance?.toString().includes(searchtext) ||
+        item.date?.toString().includes(searchtext) ||              // date filter
+        item.timein?.toString().toLowerCase().includes(lowerSearch) || // timein filter
+        item.timeout?.toString().toLowerCase().includes(lowerSearch)   // timeout filter
+     
         )
       );
     }
