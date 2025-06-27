@@ -54,11 +54,13 @@ const response = await axios.get(`${BaseUrl}/getdata`, {
   return (
     <div className='attendencepagecontainer'>
       <div className='insidecontainer'>
-       
-        <div className='pagetopcontaioner'>
-           <div className='testingwidth changelogout'>
+       <div className='pagetopcontaioner'>
+         <div className='testingwidth changelogout'>
           <div onClick={logout} className="logout-btn"><CiLogout color='white' />Logout</div>
         </div>
+       </div>
+        <div className='pagetopcontaioner'>
+          
           <div className='testingwidth'>
             <div className='excelandpdfcontainer'>
               <h5 className='exandpditem'>Excel</h5>

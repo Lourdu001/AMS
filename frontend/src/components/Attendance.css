@@ -96,7 +96,11 @@ padding-right: 10px;
     justify-content: flex-start;
 }
 .logout-btn{
-    width: 100px;
+    width: 80px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: black;
     color: white;
 }
