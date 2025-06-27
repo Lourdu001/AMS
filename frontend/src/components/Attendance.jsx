@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Attendance.css';
 import axios from 'axios';
 import { LuArrowDownUp } from "react-icons/lu";
+import { CiLogout } from "react-icons/ci";
 const Attendance = ({ move }) => {
   const [data, setData] = useState([]);
   const [onLoad, setOnLoad] = useState(false);
@@ -53,7 +54,11 @@ const response = await axios.get(`${BaseUrl}/getdata`, {
   return (
     <div className='attendencepagecontainer'>
       <div className='insidecontainer'>
+       
         <div className='pagetopcontaioner'>
+           <div className='testingwidth changelogout'>
+          <div onClick={logout} className="logout-btn"><CiLogout color='white' />Logout</div>
+        </div>
           <div className='testingwidth'>
             <div className='excelandpdfcontainer'>
               <h5 className='exandpditem'>Excel</h5>
@@ -106,7 +111,6 @@ const response = await axios.get(`${BaseUrl}/getdata`, {
             </tbody>
           </table>
         </div>
-<button onClick={logout} className="logout-btn">Logout</button>
       </div>
     </div>
   );

@@ -92,6 +92,14 @@ padding-right: 10px;
     justify-content: space-between;
     align-items: center;
 }
+.changelogout{
+    justify-content: flex-start;
+}
+.logout-btn{
+    width: 100px;
+    background-color: black;
+    color: white;
+}
 .attendancestyletemp{
      display: flex;
     justify-content: space-between;
