@@ -1,16 +1,37 @@
-  import React from 'react'
+  import React,{useState} from 'react'
   import './Attendance.css'
+  import axios from 'axios'
 
   import { LuArrowDownUp } from "react-icons/lu";
+import { useEffect } from 'react';
+
+
+
 
   const Attendance = ({ move}) => {
-  const date = "11.11.2025";
-  const empid = 111;
-  const empname = "Lord";
-  const attendance = "19.00.00";
-  const ontime = "on time";
-  const timein = "19.00.00";
-  const timeout = "23.00.00";
+const [data, setdata] = useState([]);
+const [onload, setonload] = useState(false);
+
+const BaseUrl = 'http://localhost:3001';
+
+const storedata = async() =>{
+  
+ try {
+      const response = await axios.get(`${BaseUrl}/getdata`); 
+      setdata(response.data);
+      setonload(false);
+      console.log("Data fetched successfully:", response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }   
+
+}
+
+useEffect(()=>{
+  setonload(true);
+storedata();
+},[])
+
 
 
     return (
@@ -43,38 +64,41 @@
                 </tr>
               </thead>
               <tbody>
-                <tr className='trstyle'>
-                  <td className='singlestyle'>{date}</td>
-                  <td className='empstyle'>{empid}</td>
-                  <td className='singlestyle'>{empname}</td>
-                  <td className='attendancestyletemp'><p >{attendance}</p><p className='ontimestyle'>{ontime}</p></td>
-                  <td className='singlestyle'>{timein}</td>
-                  <td className='timeoutstyle'>{timeout}</td>
-                </tr>
-                <tr className='trstyle bgstyle'>
-                  <td className='singlestyle bgstyle'>{date}</td>
-                  <td className='empstyle bgstyle'>{empid}</td>
-                  <td className='singlestyle bgstyle'>{empname}</td>
-                  <td className='attendancestyletemp bgstyle'><p >{attendance}</p><p className='ontimestyle'>{ontime}</p></td>
-                  <td className='singlestyle bgstyle'>{timein}</td>
-                  <td className='timeoutstyle bgstyle'>{timeout}</td>
-                </tr>
-                 <tr className='trstyle'>
-                  <td className='singlestyle'>{date}</td>
-                  <td className='empstyle'>{empid}</td>
-                  <td className='singlestyle'>{empname}</td>
-                  <td className='attendancestyletemp'><p >{attendance}</p><p className='ontimestyle'>{ontime}</p></td>
-                  <td className='singlestyle'>{timein}</td>
-                  <td className='timeoutstyle'>{timeout}</td>
-                </tr>
-                 <tr className='trstyle bgstyle'>
-                  <td className='singlestyle bgstyle'>{date}</td>
-                  <td className='empstyle bgstyle'>{empid}</td>
-                  <td className='singlestyle bgstyle'>{empname}</td>
-                  <td className='attendancestyletemp bgstyle'><p >{attendance}</p><p className='ontimestyle'>{ontime}</p></td>
-                  <td className='singlestyle bgstyle'>{timein}</td>
-                  <td className='timeoutstyle bgstyle'>{timeout}</td>
-                </tr> 
+              
+                {
+                  onload===false||  <tr><td colSpan="6">Loading..... </td></tr>
+
+                }
+               {onload===false&&data.length === 0 ? (
+  <tr><td colSpan="6">No data available</td></tr>
+) : (
+  data.map((item, index) => {return index%2==0?
+    <tr className='trstyle ' key={index}>
+      <td className='singlestyle'>{item.date}</td>
+      <td className='empstyle'>{item.empid}</td>
+      <td className='singlestyle'>{item.name}</td>
+      <td className='attendancestyletemp'>
+        <p>{item.attendance}</p>
+        <p className='ontimestyle'>ontime</p>
+      </td>
+      <td className='singlestyle'>{item.timein}</td>
+      <td className='timeoutstyle'>{item.timeout}</td>
+    </tr>: <tr className='trstyle bgstyle ' key={index}>
+      <td className='singlestyle bgstyle' >{item.date}</td>
+      <td className='empstyle bgstyle'>{item.empid}</td>
+      <td className='singlestyle bgstyle'>{item.name}</td>
+      <td className='attendancestyletemp bgstyle'>
+        <p>{item.attendance}</p>
+        <p className='ontimestyle '>ontime</p>
+      </td>
+      <td className='singlestyle bgstyle'>{item.timein}</td>
+      <td className='timeoutstyle bgstyle'>{item.timeout}</td>
+    </tr>
+    
+  })
+)}
+
+             
               </tbody>
             </table>
           
