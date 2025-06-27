@@ -95,7 +95,13 @@ body {
   text-align: center;
   color: #666;
 }
+.forgotstyle{
+  cursor: pointer;
 
+}
+.forgotstyle:hover{
+  color: #3b4eda;
+}
 /* 🔁 Mobile Responsive Styles */
 @media (max-width: 768px) {
   .login-box {

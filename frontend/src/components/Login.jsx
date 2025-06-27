@@ -70,7 +70,7 @@ setError('Enter gmail id');
           <button className="login-btn" onClick={loginfunction}>Login</button>
           {response && <pre>{JSON.stringify(response.user, null, 2)}</pre>}
           {error && <p style={{ color: 'red' }}>{error}</p>}
-          <p className="forgot-text">Forgot Username / Password?</p>
+          <p className="forgot-text forgotstyle">Forgot Username / Password?</p>
         </div>
       </div>
     </div>
