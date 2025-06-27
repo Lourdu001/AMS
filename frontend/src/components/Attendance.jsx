@@ -162,9 +162,10 @@ const Attendance = ({ move }) => {
     } else {
       setFilter(
         data.filter(item =>
-          item.name.toLowerCase().includes(searchtext.toLowerCase()) ||
-          item.empid.toLowerCase().includes(searchtext.toLowerCase()) ||
-          item.date.toLowerCase().includes(searchtext.toLowerCase())
+          item.name.toLowerCase().includes(searchtext.toLowerCase()) 
+          // ||
+          // item.empid.toLowerCase().includes(searchtext.toLowerCase()) ||
+          // item.date.toLowerCase().includes(searchtext.toLowerCase())
         )
       );
     }
