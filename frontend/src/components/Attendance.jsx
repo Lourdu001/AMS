@@ -163,7 +163,9 @@ const Attendance = ({ move }) => {
       setFilter(
         data.filter(item =>
           item.name.toLowerCase().includes(searchtext.toLowerCase()) 
-          // ||
+          ||item.empid.includes(parseInt(searchtext))||
+          item.id.includes(parseInt(searchtext))||
+          item.attendance.includes(parseInt(searchtext))
           // item.empid.toLowerCase().includes(searchtext.toLowerCase()) ||
           // item.date.toLowerCase().includes(searchtext.toLowerCase())
         )
