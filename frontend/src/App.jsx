@@ -1,20 +1,30 @@
-import { useState } from 'react'
-import './App.css'
-import Attendance from './components/Attendance'
-import Login from './components/Login'
- 
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import Attendance from './components/Attendance';
+import Login from './components/Login';
+
 function App() {
-  const [disp, setdisp] = useState(false)
-const move=()=>{
-  setdisp(!disp);
- }
-
   return (
-   <div>
-{disp===true? <Login move={move} />:<Attendance move={move} />
-}
-   </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginWrapper />} />
+        <Route path="/attendance" element={<AttendanceWrapper />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+// Wrappers to pass `navigate()` as `move` prop
+const LoginWrapper = () => {
+  const navigate = useNavigate();
+  return <Login move={() => navigate('/attendance')} />;
+};
+
+const AttendanceWrapper = () => {
+  const navigate = useNavigate();
+  return <Attendance move={() => navigate('/')} />;
+};
+
+export default App;

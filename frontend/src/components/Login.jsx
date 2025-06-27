@@ -68,7 +68,7 @@ import mail from '../assets/mail.svg';
 import lock from '../assets/Lock.svg';
 import axios from 'axios';
 
-const Login = ({ move }) => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [response, setResponse] = useState(null);
@@ -121,7 +121,6 @@ const Login = ({ move }) => {
           {response && <pre>{JSON.stringify(response.user, null, 2)}</pre>}
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <p className="forgot-text">Forgot Username / Password?</p>
-          <button onClick={move}>Table</button>
         </div>
       </div>
     </div>

@@ -211,7 +211,7 @@ const Attendance = ({ move }) => {
           </table>
         </div>
 
-        <button onClick={move}>Log In</button>
+<button onClick={move} className="logout-btn">Logout</button>
       </div>
     </div>
   );
