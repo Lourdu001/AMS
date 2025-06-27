@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import Attendance from './components/Attendance';
@@ -16,7 +15,6 @@ function App() {
   );
 }
 
-// Wrappers to pass `navigate()` as `move` prop
 const LoginWrapper = () => {
   const navigate = useNavigate();
   return <Login move={() => navigate('/attendance')} />;
