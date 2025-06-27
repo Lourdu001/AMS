@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 const [data, setdata] = useState([]);
 const [onload, setonload] = useState(false);
 
-const BaseUrl = 'http://localhost:3001';
+const BaseUrl = 'https://amsserver.onrender.com';
 
 const storedata = async() =>{
   
