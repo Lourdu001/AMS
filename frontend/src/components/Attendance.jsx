@@ -156,22 +156,38 @@ const Attendance = ({ move }) => {
     storeData();
   }, []);
 
+  // useEffect(() => {
+  //   if (searchtext.trim() === "") {
+  //     setFilter([]);
+  //   } else {
+  //     setFilter(
+  //       data.filter(item =>
+  //         item.name.toLowerCase().includes(searchtext.toLowerCase()) 
+  //         ||item.empid.includes(parseInt(searchtext))||
+  //         item.id.includes(parseInt(searchtext))||
+  //         item.attendance.includes(parseInt(searchtext))
+  //         // item.empid.toLowerCase().includes(searchtext.toLowerCase()) ||
+  //         // item.date.toLowerCase().includes(searchtext.toLowerCase())
+  //       )
+  //     );
+  //   }
+  // }, [searchtext, data]);
   useEffect(() => {
-    if (searchtext.trim() === "") {
-      setFilter([]);
-    } else {
-      setFilter(
-        data.filter(item =>
-          item.name.toLowerCase().includes(searchtext.toLowerCase()) 
-          ||item.empid.includes(parseInt(searchtext))||
-          item.id.includes(parseInt(searchtext))||
-          item.attendance.includes(parseInt(searchtext))
-          // item.empid.toLowerCase().includes(searchtext.toLowerCase()) ||
-          // item.date.toLowerCase().includes(searchtext.toLowerCase())
-        )
-      );
-    }
-  }, [searchtext, data]);
+    const lowerSearch = searchtext.toLowerCase();
+
+  if (!lowerSearch) {
+    setFilter([]);
+  } else {
+    setFilter(
+      data.filter(item =>
+        item.name?.toLowerCase().includes(lowerSearch) ||
+        item.empid?.toString().includes(searchtext) ||
+        item.id?.toString().includes(searchtext) ||
+        item.attendance?.toString().toLowerCase().includes(lowerSearch)
+      )
+    );
+  }
+}, [searchtext, data]);
 
   return (
     <div className='attendencepagecontainer'>
