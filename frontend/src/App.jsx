@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginWrapper />} />
         <Route path="/attendance" element={<AttendanceWrapper />} />
-        <Route path="*" element={<LoginWrapper />} />
+<Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );
