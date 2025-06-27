@@ -64,7 +64,14 @@ storedata();
                 </tr>
               </thead>
               <tbody>
-              
+               {/* {data.length===0||data.map((item)=> <tr className='trstyle'>
+                  <td className='singlestyle'>{item.date}</td>
+                  <td className='empstyle'>{item.empid}</td>
+                  <td className='singlestyle'>{item.name}</td>
+                  <td className='attendancestyletemp'><p >{item.attendance}</p><p className='ontimestyle'>{ontime}</p></td>
+                  <td className='singlestyle'>{item.timein}</td>
+                  <td className='timeoutstyle'>{item.timeout}</td>
+                </tr>)} */}
                 {
                   onload===false||  <tr><td colSpan="6">Loading..... </td></tr>
 
@@ -72,7 +79,7 @@ storedata();
                {onload===false&&data.length === 0 ? (
   <tr><td colSpan="6">No data available</td></tr>
 ) : (
-  data.map((item, index) => {return index%2==0?
+  data.map((item, index) => {{index%2==0?
     <tr className='trstyle ' key={index}>
       <td className='singlestyle'>{item.date}</td>
       <td className='empstyle'>{item.empid}</td>
@@ -89,16 +96,39 @@ storedata();
       <td className='singlestyle bgstyle'>{item.name}</td>
       <td className='attendancestyletemp bgstyle'>
         <p>{item.attendance}</p>
-        <p className='ontimestyle '>ontime</p>
+        <p className='ontimestyle'>ontime</p>
       </td>
       <td className='singlestyle bgstyle'>{item.timein}</td>
       <td className='timeoutstyle bgstyle'>{item.timeout}</td>
     </tr>
-    
+    }
   })
 )}
 
-             
+                {/* <tr className='trstyle bgstyle'>
+                  <td className='singlestyle bgstyle'>{date}</td>
+                  <td className='empstyle bgstyle'>{empid}</td>
+                  <td className='singlestyle bgstyle'>{empname}</td>
+                  <td className='attendancestyletemp bgstyle'><p >{attendance}</p><p className='ontimestyle'>{ontime}</p></td>
+                  <td className='singlestyle bgstyle'>{timein}</td>
+                  <td className='timeoutstyle bgstyle'>{timeout}</td>
+                </tr>
+                 <tr className='trstyle'>
+                  <td className='singlestyle'>{date}</td>
+                  <td className='empstyle'>{empid}</td>
+                  <td className='singlestyle'>{empname}</td>
+                  <td className='attendancestyletemp'><p >{attendance}</p><p className='ontimestyle'>{ontime}</p></td>
+                  <td className='singlestyle'>{timein}</td>
+                  <td className='timeoutstyle'>{timeout}</td>
+                </tr>
+                 <tr className='trstyle bgstyle'>
+                  <td className='singlestyle bgstyle'>{date}</td>
+                  <td className='empstyle bgstyle'>{empid}</td>
+                  <td className='singlestyle bgstyle'>{empname}</td>
+                  <td className='attendancestyletemp bgstyle'><p >{attendance}</p><p className='ontimestyle'>{ontime}</p></td>
+                  <td className='singlestyle bgstyle'>{timein}</td>
+                  <td className='timeoutstyle bgstyle'>{timeout}</td>
+                </tr>  */}
               </tbody>
             </table>
           
