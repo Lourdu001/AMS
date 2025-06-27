@@ -30,6 +30,7 @@ setError('Enter gmail id');
         email,
         password,
       });
+      localStorage.setItem('token', res.data.token);
 
       setResponse(res.data);
       setError('');

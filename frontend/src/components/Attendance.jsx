@@ -2,24 +2,31 @@ import React, { useState, useEffect } from 'react';
 import './Attendance.css';
 import axios from 'axios';
 import { LuArrowDownUp } from "react-icons/lu";
-
 const Attendance = ({ move }) => {
   const [data, setData] = useState([]);
   const [onLoad, setOnLoad] = useState(false);
   const BaseUrl = 'https://amsserver.onrender.com';
   const [filter, setFilter] = useState([]);
   const [searchtext, setSearchtext] = useState("");
-
+  const logout = () => {
+  localStorage.removeItem('token');
+  move(); 
+};
   const storeData = async () => {
     try {
-      const response = await axios.get(`${BaseUrl}/getdata`);
+      const token = localStorage.getItem('token');
+const response = await axios.get(`${BaseUrl}/getdata`, {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+});
+     
       setData(response.data);
       setOnLoad(false);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
-
   useEffect(() => {
     setOnLoad(true);
     storeData();
@@ -27,29 +34,22 @@ const Attendance = ({ move }) => {
 
   useEffect(() => {
     const lowerSearch = searchtext.toLowerCase();
-
     if (!lowerSearch) {
       setFilter([]);
     } else {
       setFilter(
         data.filter(item =>
-          // item.name?.toLowerCase().includes(lowerSearch) ||
-          // item.empid?.toString().includes(searchtext) ||
-          // item.id?.toString().includes(searchtext) ||
-          // item.attendance?.toString().toLowerCase().includes(lowerSearch)
           item.name?.toLowerCase().includes(lowerSearch) ||
         item.empid?.toString().includes(searchtext) ||
         item.id?.toString().includes(searchtext) ||
         item.attendance?.toString().includes(searchtext) ||
-        item.date?.toString().includes(searchtext) ||              // date filter
-        item.timein?.toString().toLowerCase().includes(lowerSearch) || // timein filter
-        item.timeout?.toString().toLowerCase().includes(lowerSearch)   // timeout filter
-     
+        item.date?.toString().includes(searchtext) ||            
+        item.timein?.toString().toLowerCase().includes(lowerSearch) || 
+        item.timeout?.toString().toLowerCase().includes(lowerSearch)   
         )
       );
     }
   }, [searchtext, data]);
-
   return (
     <div className='attendencepagecontainer'>
       <div className='insidecontainer'>
@@ -69,7 +69,6 @@ const Attendance = ({ move }) => {
             </div>
           </div>
         </div>
-
         <div className='tabletopcontainer'>
           <table className='tabletag'>
             <thead>
@@ -107,8 +106,7 @@ const Attendance = ({ move }) => {
             </tbody>
           </table>
         </div>
-
-<button onClick={move} className="logout-btn">Logout</button>
+<button onClick={logout} className="logout-btn">Logout</button>
       </div>
     </div>
   );
