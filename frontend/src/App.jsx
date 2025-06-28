@@ -1,5 +1,4 @@
 import React from 'react';
-// import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { HashRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
 import Attendance from './components/Attendance';

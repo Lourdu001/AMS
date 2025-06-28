@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Attendance.css';
+import ExcelJS from 'exceljs';
+import { saveAs } from 'file-saver';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 import axios from 'axios';
 import { LuArrowDownUp } from "react-icons/lu";
 import { CiLogout } from "react-icons/ci";
@@ -51,20 +55,97 @@ const response = await axios.get(`${BaseUrl}/getdata`, {
       );
     }
   }, [searchtext, data]);
+    const handleExport = async () => {
+          const fileName = 'users.xlsx';
+
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet('Sheet1');
+
+    const headers = Object.keys(data[0]).map(key => key.toUpperCase());
+    worksheet.addRow(headers);
+
+    const headerRow = worksheet.getRow(1);
+    headerRow.eachCell(cell => {
+      cell.fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: { argb: 'FF26A69A' } 
+      };
+      cell.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+      cell.alignment = { horizontal: 'center', vertical: 'middle' };
+    });
+
+    data.forEach((item, index) => {
+      const row = worksheet.addRow(Object.values(item));
+
+      if ((index + 1) % 2 === 0) {
+        row.eachCell(cell => {
+          cell.fill = {
+            type: 'pattern',
+            pattern: 'solid',
+            fgColor: { argb: 'FFF5F5F5' } 
+          };
+        });
+      }
+
+      row.eachCell((cell, colNumber) => {
+        cell.alignment = {
+          horizontal: typeof cell.value === 'number' ? 'right' : 'left',
+          vertical: 'middle'
+        };
+      });
+    });
+
+    worksheet.columns.forEach(column => {
+      let maxLength = 10;
+      column.eachCell({ includeEmpty: true }, cell => {
+        const value = cell.value ? cell.value.toString().length : 10;
+        if (value > maxLength) maxLength = value;
+      });
+      column.width = maxLength + 2;
+    });
+
+    const buffer = await workbook.xlsx.writeBuffer();
+    const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    saveAs(blob, fileName);
+  };
+    const handleDownload = () => {
+   const doc = new jsPDF();
+
+    const columns = Object.keys(data[0]).map(key => ({ header: key.toUpperCase(), dataKey: key }));
+
+    doc.autoTable({
+      columns,
+      body: data,
+      startY: 20,
+      headStyles: { fillColor: [22, 160, 133] }
+    });
+
+    doc.save("data.pdf");
+  };
   return (
     <div className='attendencepagecontainer'>
       <div className='insidecontainer'>
        <div className='pagetopcontaioner'>
          <div className='testingwidth changelogout'>
-          <div onClick={logout} className="logout-btn"><CiLogout color='white' />Logout</div>
+<div className="dropdown">
+    <PiDotsThreeOutlineVerticalBold color="white" className="dotbutton" />
+    <div className="button">
+      <div className="content">
+      <div className="flexset">
+          <div><CiLogout color="white" /></div>
+        <div>Log out</div>
+      </div>
         </div>
+    </div>
+  </div>        </div>
        </div>
         <div className='pagetopcontaioner'>
           
           <div className='testingwidth'>
             <div className='excelandpdfcontainer'>
-              <h5 className='exandpditem'>Excel</h5>
-              <h5 className='exandpditem'>PDF</h5>
+              <h5 className='exandpditem' onClick={handleExport}>Excel</h5>
+              <h5 className='exandpditem' onClick={handleDownload}>PDF</h5>
             </div>
             <div>
               <label className='searchlabel'>Search:</label>
