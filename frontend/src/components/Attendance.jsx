@@ -8,7 +8,6 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import axios from 'axios';
 import { LuArrowDownUp } from "react-icons/lu";
-import { CiLogout } from "react-icons/ci";
 const Attendance = ({ move }) => {
   const [data, setData] = useState([]);
   const [onLoad, setOnLoad] = useState(false);
