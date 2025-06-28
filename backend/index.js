@@ -19,7 +19,7 @@ const pool = new Pool({
 });
 const authenticate = (req, res, next) => {
   const authHeader = req.headers.authorization;
-
+  console.log("Auth Header:", authHeader);
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({ message: "Token missing" });
   }
@@ -28,9 +28,11 @@ const authenticate = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, SECRET);
+    console.log("Decoded Token:", decoded);
     req.user = decoded; // Add user info to req object
     next();
   } catch (err) {
+    console.error("JWT Error:", err.message);
     return res.status(401).json({ message: "Invalid token" });
   }
 };
