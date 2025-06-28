@@ -5,7 +5,7 @@ import { CiLogout } from "react-icons/ci";
 import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
 import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import autoTable from 'jspdf-autotable';
 import axios from 'axios';
 import { LuArrowDownUp } from "react-icons/lu";
 const Attendance = ({ move }) => {
@@ -128,7 +128,7 @@ const response = await axios.get(`${BaseUrl}/getdata`, {
     <div className='attendencepagecontainer'>
       <div className='insidecontainer'>
        <div className='pagetopcontaioner'>
-        <div className='testingwidth'>
+        <div className='testingwidth bg'>
          <div className="dropdown">
     <PiDotsThreeOutlineVerticalBold color="white" className="dotbutton" />
     <div className="button">
