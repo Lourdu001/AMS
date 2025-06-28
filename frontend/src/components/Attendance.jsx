@@ -4,8 +4,7 @@ import { PiDotsThreeOutlineVerticalBold } from "react-icons/pi";
 import { CiLogout } from "react-icons/ci";
 import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+
 import axios from 'axios';
 import { LuArrowDownUp } from "react-icons/lu";
 const Attendance = ({ move }) => {
@@ -110,25 +109,32 @@ const response = await axios.get(`${BaseUrl}/getdata`, {
     const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
     saveAs(blob, fileName);
   };
-    const handleDownload = () => {
-   const doc = new jsPDF();
+const handleDownload = async () => {
+  const { default: jsPDF } = await import('jspdf');
+  await import('jspdf-autotable');
 
-    const columns = Object.keys(data[0]).map(key => ({ header: key.toUpperCase(), dataKey: key }));
+  const doc = new jsPDF();
 
-    doc.autoTable({
-      columns,
-      body: data,
-      startY: 20,
-      headStyles: { fillColor: [22, 160, 133] }
-    });
+  const columns = Object.keys(data[0]).map(key => ({
+    header: key.toUpperCase(),
+    dataKey: key
+  }));
 
-    doc.save("data.pdf");
-  };
+  doc.autoTable({
+    columns,
+    body: data,
+    startY: 20,
+    headStyles: { fillColor: [22, 160, 133] }
+  });
+
+  doc.save("data.pdf");
+};
+
   return (
     <div className='attendencepagecontainer'>
       <div className='insidecontainer'>
        <div className='pagetopcontaioner'>
-        <div className='testingwidth bg'>
+        <div className=' bg'>
          <div className="dropdown">
     <PiDotsThreeOutlineVerticalBold color="white" className="dotbutton" />
     <div className="button">
