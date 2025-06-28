@@ -224,6 +224,9 @@ padding-right: 20px;
 .testingwidth{
     width: 650px;
 }
+.bg{
+    width: 650px;
+}
 .timeoutstyle{
        width: 90px;
     font-size: small;
@@ -251,6 +254,10 @@ padding-right: 20px;
 }
 .testingwidth{
     width: 550px;
+}
+.bg{
+        width: 550px;
+
 }
 .timeoutstyle{
        width: 80px;
@@ -287,6 +294,10 @@ font-size:7px;
     width: 360px;
     margin-left: 0%;
 
+}
+.bg{
+      width: 360px;
+    margin-left: 0%;
 }
 .attendancestyletemp{
      width: 70px;

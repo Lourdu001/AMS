@@ -111,24 +111,34 @@ const response = await axios.get(`${BaseUrl}/getdata`, {
   };
 const handleDownload = async () => {
   const { default: jsPDF } = await import('jspdf');
-  await import('jspdf-autotable');
 
   const doc = new jsPDF();
+  let y = 10;
 
-  const columns = Object.keys(data[0]).map(key => ({
-    header: key.toUpperCase(),
-    dataKey: key
-  }));
+  doc.setFontSize(12);
+  doc.text("Attendance Report", 14, y);
+  y += 10;
 
-  doc.autoTable({
-    columns,
-    body: data,
-    startY: 20,
-    headStyles: { fillColor: [22, 160, 133] }
+  const keys = ["date", "empid", "name", "attendance", "timein", "timeout"];
+  const header = keys.map(k => k.toUpperCase()).join(" | ");
+  doc.text(header, 14, y);
+  y += 8;
+
+  data.forEach((item, index) => {
+    const row = keys.map(k => (item[k] || "")).join(" | ");
+    doc.text(row, 14, y);
+    y += 8;
+
+    // Avoid overflowing page height (approx 280 for A4)
+    if (y > 280) {
+      doc.addPage();
+      y = 10;
+    }
   });
 
-  doc.save("data.pdf");
+  doc.save("attendance.pdf");
 };
+
 
   return (
     <div className='attendencepagecontainer'>
