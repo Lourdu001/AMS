@@ -5,7 +5,7 @@ import { CiLogout } from "react-icons/ci";
 import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
 import jsPDF from 'jspdf';
-import autoTable from 'jspdf-autotable';
+import 'jspdf-autotable';
 import axios from 'axios';
 import { LuArrowDownUp } from "react-icons/lu";
 const Attendance = ({ move }) => {
