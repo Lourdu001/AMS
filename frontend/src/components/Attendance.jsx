@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Attendance.css';
+import { PiDotsThreeOutlineVerticalBold } from "react-icons/pi";
+import { CiLogout } from "react-icons/ci";
 import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
 import jsPDF from 'jspdf';
@@ -127,19 +129,21 @@ const response = await axios.get(`${BaseUrl}/getdata`, {
     <div className='attendencepagecontainer'>
       <div className='insidecontainer'>
        <div className='pagetopcontaioner'>
-         <div className='testingwidth changelogout'>
-<div className="dropdown">
+        <div className='testingwidth'>
+         <div className="dropdown">
     <PiDotsThreeOutlineVerticalBold color="white" className="dotbutton" />
     <div className="button">
       <div className="content">
-      <div className="flexset">
+      <div className="flexset"   onClick={logout}>
           <div><CiLogout color="white" /></div>
         <div>Log out</div>
       </div>
         </div>
     </div>
-  </div>        </div>
+  </div>
+  </div>
        </div>
+     
         <div className='pagetopcontaioner'>
           
           <div className='testingwidth'>
